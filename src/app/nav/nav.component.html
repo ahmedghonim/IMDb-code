@@ -1,0 +1,115 @@
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav
+    #drawer
+    class="sidenav"
+    fixedInViewport
+    [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+    [mode]="(isHandset$ | async) ? 'side' : 'over'"
+    [opened]="(isHandset$ | async) === true"
+  >
+    <mat-toolbar>Menu</mat-toolbar>
+    <mat-nav-list *ngIf="isLogin" class="mt-5 d-flex flex-column justify-content-center">
+      <button
+        mat-button
+        class="bg-light"
+        class="d-block mx-4 mt-2"
+        (click)="drawer.toggle()"
+        routerLink="/home"
+        routerLinkActive="bg-yellow"
+      >
+        Home
+      </button>
+      <button
+        mat-button
+        class="d-block mx-4 mt-2"
+        (click)="drawer.toggle()"
+        routerLink="/movies"
+        routerLinkActive="bg-yellow"
+      >
+        Movies
+      </button>
+      <button
+        mat-button
+        class="d-block mx-4 mt-2"
+        (click)="drawer.toggle()"
+        routerLink="/tv"
+        routerLinkActive="bg-yellow"
+      >
+        Tv Show
+      </button>
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content class="bg-black">
+    <mat-toolbar color="primary">
+      <nav class="container-fluid d-flex navbar">
+        <a routerLink="/home">
+          <div
+            class="
+              d-flex
+              rounded
+              align-content-end
+              justify-content-center
+              bg-yellow
+              p-1
+            "
+          >
+            <h1 class="m-0 fw-bolder text-black fs-3 fw-bold">IMDb</h1>
+          </div>
+        </a>
+        <button
+          class="ms-3"
+          *ngIf="isLogin"
+          mat-button
+          (click)="drawer.toggle()"
+        >
+          <mat-icon class="text-white"> reorder </mat-icon>
+          menu
+        </button>
+        <div class="ms-auto">
+          <button mat-raised-button class="me-3">
+            <mat-icon class="">bookmark_add</mat-icon> Watchlist
+          </button>
+          <button mat-raised-button [matMenuTriggerFor]="menu">
+            SignIn/SignUp
+          </button>
+          <mat-menu
+            #menu="matMenu"
+            class="d-flex p-0 m-0 justify-content-center"
+          >
+            <button
+              *ngIf="!isLogin"
+              mat-menu-item
+              routerLink="/login"
+              color="primary"
+            >
+              <mat-icon> person </mat-icon>
+              Login
+            </button>
+            <button
+              *ngIf="!isLogin"
+              mat-menu-item
+              routerLink="/register"
+              color="primary"
+            >
+              <mat-icon> person_add </mat-icon>
+              Register
+            </button>
+            <button
+              *ngIf="isLogin"
+              mat-menu-item
+              color="primary "
+              (click)="logOutFromApi()"
+            >
+              <mat-icon> power_settings_new </mat-icon>
+              LogOut
+            </button>
+          </mat-menu>
+        </div>
+      </nav>
+    </mat-toolbar>
+    <!-- Add Content Here -->
+    <section class="container-fluid">
+      <router-outlet></router-outlet>
+    </section>
+  </mat-sidenav-content>
+</mat-sidenav-container>

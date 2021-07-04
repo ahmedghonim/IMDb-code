@@ -1,0 +1,82 @@
+<swiper
+  [loop]="false"
+  [slidesPerView]="slidesPerView"
+  [slidesPerGroup]="slidesPerView"
+  [spaceBetween]="15"
+  [navigation]="true"
+  class="hederSwiper2"
+  class="mySwiper-card-with-detales"
+>
+  <ng-template swiperSlide *ngFor="let api of api; let i = index">
+    <div class="custom-shadow rounded bg-light-black">
+      <button mat-icon-button class="customLBtn">
+        <mat-icon class="fs-1">bookmark_add</mat-icon>
+      </button>
+      <div class="row">
+        <img
+          *ngIf="api.poster_path"
+          [src]="imgPrefex + api.poster_path"
+          class="img-fluid imgSiz"
+        />
+      </div>
+      <div class="row mx-1 mt-3 align-items-center">
+        <div class="col-6 d-flex align-items-end">
+          <mat-icon class="d-inline-block text-yellow">star</mat-icon>
+          <span class="fs-5 text-light-black d-inline-block ms-2">{{
+            api.vote_average
+          }}</span>
+        </div>
+        <div class="col-6">
+          <button mat-button><mat-icon>star</mat-icon></button>
+        </div>
+        <div class="col-12 my-3 tiltle">
+          <a routerLink>
+            <span class="fs-6 d-block ms-2" *ngIf="api.name">{{
+              api.name
+            }}</span>
+            <span class="fs-6 d-block ms-2" *ngIf="api.title">{{
+              api.title
+            }}</span>
+          </a>
+        </div>
+
+        <div class="col-12">
+          <button
+            mat-raised-button
+            class="
+              mat-dark-hover
+              text-primary
+              w-100
+              d-flex
+              align-items-center
+              justify-content-center
+            "
+          >
+            <mat-icon>add</mat-icon> <span>Watchlist</span>
+          </button>
+        </div>
+
+        <div class="row my-3 d-flex justify-content-center align-items-center">
+          <div class="col-9 text-center">
+            <button mat-button>
+              <div class="d-flex align-items-center">
+                <mat-icon class="me-2">play_arrow</mat-icon>
+                <span>Watchlist</span>
+              </div>
+            </button>
+          </div>
+          <div class="col-3 text-center">
+            
+            <div class="d-none">
+              <app-dialog-details [data]="api.title"></app-dialog-details>
+            </div>
+
+            <button mat-icon-button mat-button (click)="get(api.title)">
+              <mat-icon>error_outline</mat-icon>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </ng-template>
+</swiper>

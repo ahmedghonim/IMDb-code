@@ -1,0 +1,27 @@
+<swiper
+  [loop]="false"
+  [slidesPerView]="slidesPerView"
+  [slidesPerGroup]="slidesPerView"
+  [spaceBetween]="25"
+  [navigation]="true"
+  class="hederSwiper2"
+  class="mySwiper-card-with-detales"
+>
+  <ng-template swiperSlide *ngFor="let api of api ;let i = index">
+    <div class="">
+      <div class="row text-center">
+        <div class="col-12">
+          <img
+            *ngIf="api.profile_path"
+            [src]="imgPrefex + api.profile_path"
+            class="w-100"
+          />
+        </div>
+        <span class="fs-4 d-block mt-3">{{ api.name }}</span>
+        <span class="fs-5 d-block mt-2 text-light-black">
+          <mat-icon>how_to_reg</mat-icon> {{ api.popularity }}</span
+        >
+      </div>
+    </div>
+  </ng-template>
+</swiper>

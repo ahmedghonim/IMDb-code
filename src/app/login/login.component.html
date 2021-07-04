@@ -1,0 +1,84 @@
+<section class="container w-25 mt-5">
+  <div class="row mt-5 pt-5 text-center">
+    <div class="col-12">
+      <h1 class="fw-bolder d-inline-block">Welcome To</h1>
+      <a routerLink="/home">
+        <div
+          class="
+            text-center
+            rounded
+            align-content-end
+            justify-content-center
+            bg-yellow
+            ms-3
+            px-2
+            d-inline-block
+          "
+        >
+          <h1 class="fs-2 m-0 fw-bolder text-black d-inline-block">IMDb</h1>
+        </div>
+      </a>
+    </div>
+  </div>
+  <div class="row">
+    <form [formGroup]='loginForm' (ngSubmit)='loginToApi(loginForm)' >
+      <div class="w-100" >
+        <div class="row">
+          <!-- ---- In Correct ----- -->
+          <mat-error >
+            {{error}}
+          </mat-error>
+          <div class="col-12">
+            <!-- ------- Email ------- -->
+            <mat-form-field class="w-100">
+              <mat-label class="text-white" >Email</mat-label>
+              <input type="email" matInput formControlName="email" placeholder="Ex. pat@example.com" />
+              <mat-error
+                *ngIf="
+                loginForm.get('email')?.hasError('email')"
+              >
+                Please enter a valid email address
+              </mat-error>
+              <mat-error *ngIf="loginForm.get('email')?.hasError('required')">
+                Email is <strong>required</strong>
+              </mat-error>
+            </mat-form-field>
+          </div>
+          <!-- ----- Password ------ -->
+          <div class="col-12">
+            <mat-form-field class="w-100 ">
+                <mat-label class="text-white">password</mat-label>
+                <input
+                  [type]="hide ? 'password' : 'text'"
+                  matInput
+                  formControlName="password"
+                />
+                
+                <a
+                  mat-icon-button
+                  matSuffix
+                  (click)="hide = !hide"
+                  [attr.aria-label]="'Hide password'"
+                  [attr.aria-pressed]="hide"
+                >
+                  <mat-icon >{{
+                    hide ? "visibility_off" : "visibility"
+                  }}</mat-icon>
+                </a>
+              <mat-error *ngIf="loginForm.get('password')?.hasError('required')">
+                password is <strong>required</strong>
+              </mat-error>
+               
+              </mat-form-field>
+          </div>
+        </div>
+      </div>
+      <div class="d-flex flex-column justify-content-center ">
+        <button [disabled]="loginForm.invalid" mat-raised-button color="accent" type="submit">SignIn</button>
+        <a class="mt-2 d-block" routerLink="/register">
+            <span>Dont have an account ?</span>
+        </a>
+      </div>
+    </form>
+  </div>
+</section>

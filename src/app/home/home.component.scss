@@ -1,0 +1,28 @@
+.titleDiv{
+    cursor: pointer;
+    &:hover{
+        mat-icon{
+            color: var(--yellow);
+        }
+    }
+    .title{
+        border-left: 5px solid var(--yellow);
+    }
+}
+.borderForBtn{
+    border: 1px solid white !important;
+}
+.btnBBorder{
+    border-bottom: 5px solid var(--yellow) ;
+    border-radius: 0 ;
+    
+}
+.numRBorder{
+border-right: 1px solid var(--yellow);
+padding-right: 10px;
+margin-right: 15px;
+}
+.gradiant{
+    background-image: linear-gradient(to right,rgba(black, 1), rgba(#1a1a1a, 0.5) ) !important;
+
+}

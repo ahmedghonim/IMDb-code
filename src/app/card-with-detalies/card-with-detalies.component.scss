@@ -1,0 +1,49 @@
+.mySwiper-card-with-detales {
+  &:hover {
+    .swiper-button-next:after {
+      transform: translate(0%, 0%);
+    }
+    .swiper-button-prev:after {
+      transform: translate(0%, 0%);
+    }
+  }
+  .swiper-button-next:after,
+  .swiper-button-prev:after {
+    color: white;
+  }
+  .swiper-button-next:after {
+    transform: translate(-40%, 0%) !important;
+  }
+  .swiper-button-prev:after {
+    transform: translate(40%, 0%) !important;
+  }
+  a {
+    color: white;
+    &:hover {
+      color: white;
+      text-decoration: underline !important;
+    }
+  }
+  .tiltle {
+    height: 2.5rem;
+  }
+  .custom-shadow {
+    position: relative;
+    box-shadow: 7px 8px 1px -2px rgb(0 0 0 / 20%),
+      4px 6px 2px 0px rgb(0 0 0 / 14%), 9px 10px 5px 0px rgb(0 0 0 / 12%);
+    .customLBtn {
+      position: absolute;
+      left: 0px;
+      top: 0px;
+      opacity: .5;
+      color: var(--loght-black) ;
+      &:hover{
+        color: white !important;
+        opacity: 1;
+      }
+    }
+    .imgSiz{
+      height: 330px;
+    }
+  }
+}

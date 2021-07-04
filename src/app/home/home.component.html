@@ -1,0 +1,232 @@
+<div class="bg-black">
+  <app-home-heder></app-home-heder>
+  <section class="container-fluid">
+    <app-card-slider></app-card-slider>
+
+    <!-- Featured today part  -->
+    <div class="row mx-3">
+      <div class="col-12 my-3">
+        <h2>Featured today</h2>
+      </div>
+      <div class="col-7">
+        <app-card-with-detalies
+          [slidesPerView]="3"
+          [api]="topMovies"
+          
+        >
+      </app-card-with-detalies>
+      </div>
+    </div>
+    <!-- Featured today part  -->
+    
+    <!-- What to watch part -->
+    <div class="row m-3">
+      <div class="col-12 mt-5">
+        <h2>What to watch</h2>
+      </div>
+      <div class="col-12">
+        <!-- title Div uper part  -->
+        <div class="row my-3">
+          <!-- - Title In The Top -- -->
+          <div class="w-auto titleDiv">
+            <div class="d-flex align-items-center my-3">
+              <div class="title py-2 d-flex align-items-center">
+                <span class="ms-2 fs-3 fw-bold"> Top picks </span>
+              </div>
+              <mat-icon class="fs-1">chevron_right</mat-icon>
+            </div>
+            <!-- - Title In The Top -- -->
+            <span class="fs-5 text-light-black"
+              >TV shows and movies just for you</span
+            >
+          </div>
+        </div>
+       
+        <!-- title Div uper part  -->
+        <div class="row">
+          <app-card-with-detalies
+            [slidesPerView]="5"
+            [api]="trendingAll"
+          ></app-card-with-detalies>
+        </div>
+      </div>
+    </div>
+    <!-- What to watch part -->
+
+    <!-- From your Watchlist part -->
+    <div class="row m-3">
+      <div class="col-12">
+        <!-- title Div uper part  -->
+        <div class="row my-3">
+          <!-- - Title In The Top -- -->
+          <div class="w-auto titleDiv">
+            <div class="d-flex align-items-center my-3">
+              <div class="title py-2 d-flex align-items-center">
+                <span class="ms-2 fs-3 fw-bold"> From your Watchlist </span>
+              </div>
+              <mat-icon class="fs-1">chevron_right</mat-icon>
+            </div>
+            <!-- - Title In The Top -- -->
+          </div>
+        </div>
+        <!-- title Div uper part  -->
+        <div class="row">
+          <div class="col-12 d-flex flex-column align-items-center">
+
+            <button mat-icon-button disabled class="me-3"><mat-icon class="fs-1 ">bookmark_add</mat-icon></button>
+  <span class="d-block fs-5 fw-bold mt-4">Sign in to access your Watchlist</span>
+  <span class="d-block fs-5 mt-2">Save shows and movies to keep track of what you want to watch.</span>
+  <button routerLink="/login" mat-raised-button color="accent" class="fs-6 py-1 px-5 fw-bold  mt-5">Sighn in to IMDb</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- From your Watchlist part -->
+
+    <!-- More to watch part -->
+    <div class="row m-3">
+      <div class="col-12 mt-5">
+        <h2>More to watch</h2>
+      </div>
+      <div class="col-6">
+        <!-- title Div uper part  -->
+        <div class="row my-3">
+          <!-- - Title In The Top -- -->
+          <div class="w-auto titleDiv">
+            <div class="d-flex align-items-center my-3">
+              <div class="title py-2 d-flex align-items-center">
+                <span class="ms-2 fs-3 fw-bold"> Top picks </span>
+              </div>
+              <mat-icon class="fs-1">chevron_right</mat-icon>
+            </div>
+            <!-- - Title In The Top -- -->
+            <span class="fs-5 text-light-black"
+              >IMDb helps you select the perfect next show or movie to watch.
+            </span>
+          </div>
+        </div>
+        <!-- title Div uper part  -->
+        <div class="row">
+          <div class="col-6">
+            <button mat-button class=" w-100 borderForBtn">Watch Guide</button>
+          </div>
+          <div class="col-6">
+            <button mat-button class=" w-100 borderForBtn">More Popular</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- More to watch part -->
+
+    <!-- Explore what’s streaming part -->
+    <div class="row m-3">
+      <div class="col-12 mt-5">
+        <h2>Explore what’s streaming</h2>
+      </div>
+      <div class="col-12">
+        <!-- title Div uper part  -->
+        <div class="row my-3">
+          <!-- - Title In The Top -- -->
+          <div class="w-auto titleDiv">
+            <div class="d-flex align-items-center my-3">
+              <button mat-button class="btnBBorder fs-5 p-2 fw-bold">
+                PRIME VIDEO
+              </button>
+            </div>
+            <!-- - Title In The Top -- -->
+            <span class="fs-5">included with Prime</span>
+          </div>
+        </div>
+        <!-- title Div uper part  -->
+        <div class="row">
+          <app-card-with-detalies
+            [slidesPerView]="5"
+            [api]="topTv"
+          ></app-card-with-detalies>
+        </div>
+      </div>
+    </div>
+    <!-- Explore what’s streaming part -->
+
+    <!-- Explore Movies & TV shows part -->
+    <div class="row m-3">
+      <div class="col-12 mt-5">
+        <h2>Explore Movies & TV shows</h2>
+      </div>
+      <div class="col-12">
+        <!-- title Div uper part  -->
+        <div class="row my-3">
+          <!-- - Title In The Top -- -->
+          <div class="w-auto titleDiv">
+            <div class="d-flex align-items-center my-3">
+              <div class="title py-2 d-flex align-items-center">
+                <span class="ms-2 fs-3 fw-bold"> Top box office (US) </span>
+              </div>
+              <mat-icon class="fs-1">chevron_right</mat-icon>
+            </div>
+            <!-- - Title In The Top -- -->
+            <span class="fs-5 text-light-black">Weekend of June 25-27 </span>
+          </div>
+        </div>
+        <!-- title Div uper part  -->
+        <div class="row">
+          <div class="col-6" *ngFor="let topMovies of topMovies; let i = index">
+            <div *ngIf="i < 6">
+              <div class="d-flex align-items-start mt-3 gradiant pt-3" >
+                <div class="d-flex align-items-center">
+
+                  <div>
+                    <span class="fs-5 numRBorder">{{ i + 1 }}</span>
+                  </div>
+                  <div>
+                    <button mat-icon-button class="me-3"><mat-icon class="fs-1 ">bookmark_add</mat-icon></button>
+                  </div>
+                </div>
+                <div>
+                  <span class="fs-4 d-block">{{ topMovies.title }}</span>
+                  <span
+                    class="fs-6 d-flex align-items-end mt-2 text-light-black"
+                  >
+                    <mat-icon>how_to_reg</mat-icon>
+                    <span>{{ topMovies.popularity }}</span>
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Explore Movies & TV shows part -->
+
+    <!-- What to watch part -->
+    <div class="row m-3">
+      <div class="col-12">
+        <!-- title Div uper part  -->
+        <div class="row my-3">
+          <!-- - Title In The Top -- -->
+          <div class="w-auto titleDiv">
+            <div class="d-flex align-items-center my-3">
+              <div class="title py-2 d-flex align-items-center">
+                <span class="ms-2 fs-3 fw-bold"> Persons </span>
+              </div>
+              <mat-icon class="fs-1">chevron_right</mat-icon>
+            </div>
+            <!-- - Title In The Top -- -->
+            <span class="fs-5 text-light-black"
+              >Some Person</span
+            >
+          </div>
+        </div>
+        <!-- title Div uper part  -->
+        <div class="row">
+          <div class="col-12" >
+       
+           <app-card-slider [api]='persons'></app-card-slider>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- What to watch part -->
+  </section>
+</div>

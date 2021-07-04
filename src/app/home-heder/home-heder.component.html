@@ -1,0 +1,177 @@
+<div class="container-fluid mt-2 homeHeder">
+  <div class="row m-0 vh-100">
+    <div class="col-md-8 h-100">
+      <swiper
+        style="--swiper-navigation-color: #fff; --swiper-pagination-color: #fff"
+        [loop]="false"
+        [spaceBetween]="10"
+        [navigation]="true"
+        [thumbs]="{ swiper: thumbsSwiper }"
+        class="hederSwiper2"
+        [autoplay]="{
+          delay: 3500,
+          disableOnInteraction: true
+        }"
+      >
+        <ng-template
+          class="position-relative"
+          swiperSlide
+          *ngFor="let media of trendingMovies"
+          ><img class="w-100" [src]="imgPrefex + media.backdrop_path" />
+          <!-- detailes in slider -->
+          <div class="detailes ">
+            
+            <div class="row mx-3 ">
+              <div class="row w-100 d-flex align-items-end ">
+                <div class="col-3 h-100 position-relative">
+                  <button mat-icon-button  class=" customLBtn  "><mat-icon class="fs-1 ">bookmark_add</mat-icon></button>
+                  <img
+                    img
+                    class="w-100"
+                    [src]="imgPrefex + media.poster_path"
+                    alt=""
+                  />
+                </div>
+                <!-- - Part Of Left Info - -->
+                <div class="col-9 text-start mb-3">
+                  <div class="row d-flex align-items-start">
+                    <!-- ----- Play Icon ----- -->
+                    <div class="col-2">
+                      <div class="text-start p-0">
+                        <mat-icon class="play_circle">
+                          play_circle_outline
+                        </mat-icon>
+                      </div>
+                      <div class="col-10"></div>
+                    </div>
+                    <!-- ----- Play Icon ----- -->
+
+                    <div class="col-10">
+                      <!-- ------- Title ------- -->
+                      <h2 *ngIf="media.original_title" class="fs-3">
+                        "{{ media.original_title }}"
+                      </h2>
+                      <h2 *ngIf="media.name" class="fs-3">
+                        "{{ media.name }}"
+                      </h2>
+                      <!-- ------- Title ------- -->
+
+                      <!-- --- Type And Date --- -->
+                      <div class="row">
+                        <div class="col-6">
+                          <span *ngIf="media.media_type" class="fs-6"
+                            >Type : "{{ media.media_type }}"</span
+                          >
+                        </div>
+                        <div class="col-6">
+                          <span *ngIf="media.release_date" class="fs-6"
+                            >Date : "{{ media.release_date }}"</span
+                          >
+                          <span *ngIf="media.first_air_date" class="fs-6"
+                            >Date : "{{ media.first_air_date }}"</span
+                          >
+                        </div>
+                      </div>
+                      <!-- --- Type And Date --- -->
+                    </div>
+                  </div>
+                </div>
+                <!-- - Part Of Left Info - -->
+              </div>
+            </div>
+          </div>
+        </ng-template>
+      </swiper>
+    </div>
+    <div class="col-md-4 h-100">
+      <h1 class="mt-3 text-yellow fw-bold fs-4">Up next</h1>
+      <swiper
+        [direction]="'vertical'"
+        (swiper)="thumbsSwiper = $event"
+        [loop]="true"
+        [slidesPerView]="3"
+        [centeredSlides]="true"
+        [mousewheel]="true"
+        [freeMode]="true"
+        [watchSlidesVisibility]="false"
+        [watchSlidesProgress]="false"
+        class="hederSwiper"
+        dir="rtl"
+      >
+        <ng-template swiperSlide class="" *ngFor="let media of trendingMovies">
+          <div class="row">
+            <div class="ps-2 pt-1 col-8 d-flex flex-column justify-content-end">
+              <!-- - Part Of Left Info - -->
+              <div class="ps-2 pt-1 row d-flex flex-column align-items-end">
+                <!-- ----- Play Icon ----- -->
+                <div class="p-0 pt-1 row">
+                  <div class="p-0 pt-1 m-0 text-start col-3">
+                    <mat-icon class="p-0 m-0 fs-1 play_circle">
+                      play_circle_outline
+                    </mat-icon>
+                  </div>
+                  <div class="ps-2 pt-1 col-8">
+                    <div class="row">
+                      <div class="row">
+                        <span
+                          *ngIf="media.vote_average"
+                          class="
+                            fs-xs
+                            d-flex
+                            align-items-end
+                            justify-content-end
+                          "
+                          ><mat-icon color="accent" class="me-1">star </mat-icon>
+                          {{ media.vote_average }}</span
+                        >
+                      </div>
+                      <div class="row">
+                        <span *ngIf="media.release_date" class="ps-2 pt-1 fs-s"
+                          >"{{ media.release_date }}"</span
+                        >
+                        <span
+                          *ngIf="media.first_air_date"
+                          class="ps-2 pt-1 fs-s"
+                          >"{{ media.first_air_date }}"</span
+                        >
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- ----- Play Icon ----- -->
+  
+                <div class="ps-2 pt-1 row d-flex m-0">
+                  <!-- ------- Title ------- -->
+                  <div class="ps-2 pt-1 row text-start">
+                    <span *ngIf="media.original_title" class="ps-2 pt-1">
+                      "{{ media.title }}"
+                    </span>
+                    <span *ngIf="media.name" class="ps-2 pt-1">
+                      "{{ media.name }}"
+                    </span>
+                  </div>
+  
+                  <!-- ------- Title ------- -->
+  
+                  <!-- --- Type And Date --- -->
+                  <div class="ps-2 pt-1 row text-start">
+                    <span *ngIf="media.media_type" class="ps-2 pt-1 fs-s"
+                      >Type : "{{ media.media_type }}"</span
+                    >
+                  </div>
+                  <!-- --- Type And Date --- -->
+                </div>
+              </div>
+  
+              <!-- - Part Of Left Info - -->
+            </div>
+            <div class="col-3 position-relative">
+              <button mat-icon-button  class=" customLBtn  "><mat-icon class="fs-1 ">bookmark_add</mat-icon></button>
+              <img class="w-100" [src]="imgPrefex + media.poster_path" />
+            </div>
+          </div>
+        </ng-template>
+      </swiper>
+    </div>
+  </div>
+</div>
