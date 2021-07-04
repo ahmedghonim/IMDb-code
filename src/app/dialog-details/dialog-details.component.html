@@ -1,5 +1,64 @@
-<p>{{data}}</p>
-<p>{{data}}</p>
-<p>{{data}}</p>
-<p>{{data}}</p>
+<div class="container">
+  <div class="row content d-flex">
+    <div class="col-4 img-part">
+      <button mat-icon-button class="customLBtn">
+        <mat-icon class="fs-1">bookmark_add</mat-icon>
+      </button>
+      <img
+        *ngIf="api.poster_path"
+        [src]="imgPrefex + api.poster_path"
+        class="img-fluid imgSiz"
+      />
+    </div>
+    <div class="col-8 ">
+      <div class="row ">
+        <!-- ------- Title ------- -->
+        <div class="col-12 ">
+          <h2 class="fs-2" *ngIf="api.name">{{ api.name }}</h2>
+          <h2 class="fs-2" *ngIf="api.title">{{ api.title }}</h2>
+        </div>
+        <!-- ------- Title ------- -->
+        <!-- ---- Data &lung ----- -->
+        <div class="col-12 mt-3 d-flex align-items-end ">
+          <mat-icon>event</mat-icon>
+          <span class="me-3 fs-6" *ngIf="api.release_date">
+            {{ api.release_date }}
+          </span>
+          <mat-icon>language</mat-icon>
+          <span class="me-3 fs-6" *ngIf="api.original_language">
+            {{ api.original_language }}
+          </span>
+        </div>
+        <!-- ---- Data &lung ----- -->
+        <div class="col-12 mt-2 d-flex align-items-end">
+          <mat-icon>how_to_reg</mat-icon>
+          <span class="me-3 fs-6" *ngIf="api.vote_count">
+            {{ api.vote_count }}
+          </span>
+          <mat-icon>people</mat-icon>
+          <span class="me-3 fs-6" *ngIf="api.popularity">
+            {{ api.popularity }}
+          </span>
+          <mat-icon class="text-yellow">star</mat-icon>
+          <span class="me-3 fs-5 text-light-black">
+            {{ api.vote_average }}
+          </span>
+        </div>
 
+        <span
+          class="fs-3 mt-4 mb-2 text-light-black mt-4"
+          *ngIf="api.original_title"
+        >
+          {{ api.original_title }}
+        </span>
+        <mat-divider class="mt-2"></mat-divider>
+        <div class="col-12 mt-1">
+
+          <button mat-raised-button color="primary" class="w-100 text-white">
+            <mat-icon>thumb_down</mat-icon> Not interested
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

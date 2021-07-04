@@ -1,3 +1,4 @@
+import { BehaviorSubject } from 'rxjs';
 import { CardWithDetaliesComponent } from './card-with-detalies/card-with-detalies.component';
 import { Injectable } from '@angular/core';
 
@@ -5,9 +6,11 @@ import { Injectable } from '@angular/core';
   providedIn: 'root',
 })
 export class SharingDataCardService {
-  constructor( ) {
-   
-    
- 
-}
+  curantDataCard = new BehaviorSubject(null);
+  imgPrefex = 'https://image.tmdb.org/t/p/w500/';
+
+  constructor() {}
+  updateData(data: any) {
+    this.curantDataCard.next(data);
+  }
 }

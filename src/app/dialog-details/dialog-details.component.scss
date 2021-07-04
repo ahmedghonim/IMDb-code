@@ -1,0 +1,18 @@
+.mat-dialog-container {
+  width: 50% !important;
+  margin: auto !important;
+  padding: 20px 10px!important;
+  max-height:auto !important ;
+  .content {
+    .img-part {
+      position: relative;
+      .customLBtn {
+        position: absolute;
+        top: 0;
+        left: 10px;
+        width: 0px;
+        background-color: transparent !important;
+      }
+    }
+  }
+}

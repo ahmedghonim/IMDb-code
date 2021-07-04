@@ -1,10 +1,18 @@
+import { SharingDataCardService } from './../sharing-data-card.service';
+import { DialogDetailsComponent } from './../dialog-details/dialog-details.component';
 import { HomeComponent } from './../home/home.component';
 import { ApiMoviesService } from './../api-movies.service';
 import { BehaviorSubject } from 'rxjs';
-import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
+import {
+  Component,
+  Input,
+  OnInit,
+  Output,
+  EventEmitter,
+  ViewChild,
+} from '@angular/core';
 import SwiperCore, { Autoplay, Mousewheel, Navigation } from 'swiper/core';
 import { MatDialog } from '@angular/material/dialog';
-import { DialogDetailsComponent } from '../dialog-details/dialog-details.component';
 
 SwiperCore.use([Navigation, Mousewheel, Autoplay]);
 
@@ -16,23 +24,20 @@ SwiperCore.use([Navigation, Mousewheel, Autoplay]);
 export class CardWithDetaliesComponent implements OnInit {
   imgPrefex = 'https://image.tmdb.org/t/p/w500/';
 
-  @Input() api: any;
-  @Input() slidesPerView: number = 5;
+  @Input() api: any = null;
+  @Input() slidesPerView: any = null;
   constructor(
     private dialog: MatDialog,
-    private _ApiMoviesService: ApiMoviesService
+    private _ApiMoviesService: ApiMoviesService,
+    private _SharingDataCardService: SharingDataCardService
   ) {}
-
+// function to oben dialog
   openDialog() {
-    this.dialog.open(HomeComponent);
+    this.dialog.open(DialogDetailsComponent);
   }
 
-  x: string='';
-  get(data?: any) {
-    this.x = data;
-
-    console.log(this.x);
-
+  carntApiData(data?: any): void {
+    this._SharingDataCardService.updateData(data);
     this.openDialog();
   }
 

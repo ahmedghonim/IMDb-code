@@ -8,6 +8,7 @@ import { Component, OnInit,Input } from '@angular/core';
 export class CardSliderComponent implements OnInit {
   imgPrefex = 'https://image.tmdb.org/t/p/w500/';
   @Input() api:any;
+  @Input() dialog:any = null;
   @Input() slidesPerView:number=5;
   constructor() { }
 

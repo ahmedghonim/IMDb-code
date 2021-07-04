@@ -27,7 +27,7 @@
           }}</span>
         </div>
         <div class="col-6">
-          <button mat-button><mat-icon>star</mat-icon></button>
+          <button mat-button><mat-icon>favorite_border</mat-icon></button>
         </div>
         <div class="col-12 my-3 tiltle">
           <a routerLink>
@@ -66,17 +66,13 @@
             </button>
           </div>
           <div class="col-3 text-center">
-            
-            <div class="d-none">
-              <app-dialog-details [data]="api.title"></app-dialog-details>
-            </div>
-
-            <button mat-icon-button mat-button (click)="get(api.title)">
+            <button mat-icon-button mat-button (click)="carntApiData(api)">
               <mat-icon>error_outline</mat-icon>
             </button>
           </div>
         </div>
       </div>
     </div>
+   
   </ng-template>
 </swiper>
