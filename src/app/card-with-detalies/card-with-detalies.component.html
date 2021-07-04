@@ -1,11 +1,26 @@
 <swiper
   [loop]="false"
   [slidesPerView]="slidesPerView"
-  [slidesPerGroup]="slidesPerView"
+  [slidesPerGroup]="1"
   [spaceBetween]="15"
   [navigation]="true"
   class="hederSwiper2"
   class="mySwiper-card-with-detales"
+  [breakpoints]="{
+    '640': {
+      slidesPerView: 1 ,
+      spaceBetween: 20
+    },
+    '768': {
+      slidesPerView: 3 ,
+      spaceBetween: 40
+    },
+    '1024': {
+      slidesPerView: slidesPerView,
+      spaceBetween: 15
+      
+    }
+  }"
 >
   <ng-template swiperSlide *ngFor="let api of api; let i = index">
     <div class="custom-shadow rounded bg-light-black">
@@ -73,6 +88,5 @@
         </div>
       </div>
     </div>
-   
   </ng-template>
 </swiper>

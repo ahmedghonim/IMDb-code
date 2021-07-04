@@ -1,4 +1,13 @@
-<div class="container">
+<div class="container position-relative">
+  <div mat-dialog-close class="layer"></div>
+  <button
+    mat-icon-button
+    mat-dialog-close
+    class="d-flex justify-content-center align-items-center closeBtnDialog"
+  >
+    <mat-icon >close</mat-icon>
+  </button>
+
   <div class="row content d-flex">
     <div class="col-4 img-part">
       <button mat-icon-button class="customLBtn">
@@ -10,37 +19,45 @@
         class="img-fluid imgSiz"
       />
     </div>
-    <div class="col-8 ">
-      <div class="row ">
+    <div class="col-8">
+      <div class="row">
         <!-- ------- Title ------- -->
-        <div class="col-12 ">
+        <div class="col-12">
           <h2 class="fs-2" *ngIf="api.name">{{ api.name }}</h2>
           <h2 class="fs-2" *ngIf="api.title">{{ api.title }}</h2>
         </div>
         <!-- ------- Title ------- -->
         <!-- ---- Data &lung ----- -->
-        <div class="col-12 mt-3 d-flex align-items-end ">
-          <mat-icon>event</mat-icon>
+        <div class="col-12 mt-3 d-flex align-items-end">
+          <mat-icon *ngIf="api.release_date" class="me-2">event</mat-icon>
           <span class="me-3 fs-6" *ngIf="api.release_date">
             {{ api.release_date }}
           </span>
-          <mat-icon>language</mat-icon>
+          <mat-icon *ngIf="api.original_language" class="me-2"
+            >language</mat-icon
+          >
           <span class="me-3 fs-6" *ngIf="api.original_language">
             {{ api.original_language }}
+          </span>
+          <mat-icon *ngIf="api.media_type" class="me-2"
+            >video_camera_front</mat-icon
+          >
+          <span class="me-3 fs-6" *ngIf="api.media_type">
+            {{ api.media_type }}
           </span>
         </div>
         <!-- ---- Data &lung ----- -->
         <div class="col-12 mt-2 d-flex align-items-end">
-          <mat-icon>how_to_reg</mat-icon>
+          <mat-icon *ngIf="api.vote_count" class="me-2">how_to_reg</mat-icon>
           <span class="me-3 fs-6" *ngIf="api.vote_count">
             {{ api.vote_count }}
           </span>
-          <mat-icon>people</mat-icon>
+          <mat-icon *ngIf="api.popularity" class="me-2">people</mat-icon>
           <span class="me-3 fs-6" *ngIf="api.popularity">
             {{ api.popularity }}
           </span>
-          <mat-icon class="text-yellow">star</mat-icon>
-          <span class="me-3 fs-5 text-light-black">
+          <mat-icon *ngIf="api.vote_average" class="text-yellow">star</mat-icon>
+          <span *ngIf="api.vote_average" class="me-3 fs-5 text-light-black">
             {{ api.vote_average }}
           </span>
         </div>
@@ -53,9 +70,8 @@
         </span>
         <mat-divider class="mt-2"></mat-divider>
         <div class="col-12 mt-1">
-
           <button mat-raised-button color="primary" class="w-100 text-white">
-            <mat-icon>thumb_down</mat-icon> Not interested
+            <mat-icon class="me-2">thumb_down</mat-icon> Not interested
           </button>
         </div>
       </div>

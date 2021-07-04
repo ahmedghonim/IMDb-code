@@ -1,8 +1,29 @@
 .mat-dialog-container {
+    position: relative;
+    overflow: visible !important;
   width: 50% !important;
   margin: auto !important;
   padding: 20px 10px!important;
   max-height:auto !important ;
+  overflow: visible;
+
+  .layer{
+      position: absolute;
+      cursor:default ;
+     top: -100%;
+     bottom: -100%;
+     left: -100%;
+     right: -100%;
+     
+      z-index: -999;
+  }
+  .closeBtnDialog{
+      position: absolute;
+      top: 0px;
+      right:0;
+      transform: translate(10px,-70px);
+      z-index: 20 !important;
+  }
   .content {
     .img-part {
       position: relative;
@@ -16,3 +37,4 @@
     }
   }
 }
+
