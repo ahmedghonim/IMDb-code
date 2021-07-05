@@ -19,8 +19,6 @@ export class DialogDetailsComponent implements OnInit {
   imgPrefex = this._CardService.imgPrefex;
 
   ngOnInit(): void {
-    this._CardService.curantDataCard.subscribe((api) => {
-      this.api = api;
-    });
+    
   }
 }

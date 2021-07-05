@@ -26,11 +26,12 @@ export class CardWithDetaliesComponent implements OnInit {
 
   @Input() api: any = null;
   @Input() slidesPerView: any = null;
+
   constructor(
     private dialog: MatDialog,
-    private _ApiMoviesService: ApiMoviesService,
     private _SharingDataCardService: SharingDataCardService
   ) {}
+  
 // function to oben dialog
   openDialog() {
     this.dialog.open(DialogDetailsComponent);
@@ -39,6 +40,9 @@ export class CardWithDetaliesComponent implements OnInit {
   carntApiData(data?: any): void {
     this._SharingDataCardService.updateData(data);
     this.openDialog();
+  }
+  carntApiDataDetails(data?: any): void {
+    this._SharingDataCardService.updateData(data);
   }
 
   ngOnInit(): void {}

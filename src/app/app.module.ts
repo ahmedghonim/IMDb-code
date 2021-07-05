@@ -22,6 +22,7 @@ import { SwiperModule } from 'swiper/angular';
 import { CardSliderComponent } from './card-slider/card-slider.component';
 import { CardWithDetaliesComponent } from './card-with-detalies/card-with-detalies.component';
 import { DialogDetailsComponent } from './dialog-details/dialog-details.component';
+import { DetailsComponent } from './details/details.component';
 
 @NgModule({
   declarations: [
@@ -37,6 +38,7 @@ import { DialogDetailsComponent } from './dialog-details/dialog-details.componen
     CardSliderComponent,
     CardWithDetaliesComponent,
     DialogDetailsComponent,
+    DetailsComponent,
   ],
   imports: [
   BrowserModule,

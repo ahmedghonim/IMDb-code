@@ -27,13 +27,13 @@
       <button mat-icon-button class="customLBtn">
         <mat-icon class="fs-1">bookmark_add</mat-icon>
       </button>
-      <div class="row">
+      <a routerLink='/details' (click)="carntApiDataDetails(api)" class="row">
         <img
           *ngIf="api.poster_path"
           [src]="imgPrefex + api.poster_path"
           class="img-fluid imgSiz"
         />
-      </div>
+      </a>
       <div class="row mx-1 mt-3 align-items-center">
         <div class="col-6 d-flex align-items-end">
           <mat-icon class="d-inline-block text-yellow">star</mat-icon>

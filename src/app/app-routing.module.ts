@@ -1,3 +1,4 @@
+import { DetailsComponent } from './details/details.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './home/home.component';
@@ -13,7 +14,7 @@ const routes: Routes = [
   {path:"home",canActivate:[AuthGuard],component:HomeComponent},
   {path:"movies",component:MoviesComponent},
   {path:"tv",canActivate:[AuthGuard],component:TvComponent},
-  {path:"d",canActivate:[AuthGuard],component:DialogDetailsComponent},
+  {path:"details",canActivate:[AuthGuard],component:DetailsComponent},
   {path:"login",component:LoginComponent},
   {path:"register",component:RegisterComponent},
   {path:"",redirectTo:"/home",pathMatch:"full"},

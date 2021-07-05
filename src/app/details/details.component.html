@@ -1,0 +1,88 @@
+<div class="container">
+    <div class="row">
+        <!-- -- Uper Info Title -- -->
+      <div class="col-12 d-flex align-items-end">
+        <!-- ------- Title ------- -->
+        <div class="col-6">
+          <h2 class="fs-2 mb-0" *ngIf="api.name">{{ api.name }}</h2>
+          <h2 class="fs-2   mb-0" *ngIf="api.title">{{ api.title }}</h2>
+        </div>
+        <!-- ------- Title ------- -->
+
+        <!-- ---- Data &lung ----- -->
+        <div class="col-3 d-flex align-items-end">
+          <mat-icon *ngIf="api.release_date" class="me-2">event</mat-icon>
+          <span class="me-3 fs-6" *ngIf="api.release_date">
+            {{ api.release_date }}
+          </span>
+          <mat-icon *ngIf="api.original_language" class="me-2"
+            >language</mat-icon
+          >
+          <span class="me-3 fs-6" *ngIf="api.original_language">
+            {{ api.original_language }}
+          </span>
+          <mat-icon *ngIf="api.media_type" class="me-2"
+            >video_camera_front</mat-icon
+          >
+          <span class="me-3 fs-6" *ngIf="api.media_type">
+            {{ api.media_type }}
+          </span>
+        </div>
+
+        <!-- ---- Data &lung ----- -->
+        <!-- vote count , popularity & average -->
+        <div class="col-3 d-flex align-items-end">
+          <mat-icon *ngIf="api.vote_count" class="me-2">how_to_reg</mat-icon>
+          <span class="me-3 fs-6" *ngIf="api.vote_count">
+            {{ api.vote_count }}
+          </span>
+          <mat-icon *ngIf="api.popularity" class="me-2">people</mat-icon>
+          <span class="me-3 fs-6" *ngIf="api.popularity">
+            {{ api.popularity }}
+          </span>
+          <mat-icon *ngIf="api.vote_average" class="text-yellow">star</mat-icon>
+          <span *ngIf="api.vote_average" class="me-3 fs-5 text-light-black">
+            {{ api.vote_average }}
+          </span>
+        </div>
+        <!-- vote count , popularity & average -->
+      </div>
+        <!-- -- Uper Info Title -- -->
+        <div class="col-12">
+            <mat-toolbar>
+               
+              <div class="ms-auto">
+                  <button mat-icon-button  aria-label="Example icon-button with heart icon">
+                    <mat-icon>favorite</mat-icon>
+                  </button>
+                  <button mat-icon-button aria-label="Example icon-button with share icon">
+                   <mat-icon>share</mat-icon>
+                 </button>
+
+              </div>
+             </mat-toolbar>
+        </div>
+        <div class="row">
+            <div class="col-4">
+                <img
+                *ngIf="api.poster_path"
+                [src]="imgPrefex + api.poster_path"
+                class="img-fluid imgSiz"
+                />
+                
+            </div>
+            <!-- -- Original Title --- -->
+            <span
+            class="fs-3 mt-4 mb-2 text-light-black mt-4"
+            *ngIf="api.original_title"
+            >
+            {{ api.original_title }}
+        </span>
+        <button mat-icon-button class="customLBtn">
+          <mat-icon class="fs-1">bookmark_add</mat-icon>
+        </button>
+          <!-- -- Original Title --- -->
+        </div>
+    </div>
+  </div>
+
