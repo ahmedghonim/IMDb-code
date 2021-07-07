@@ -23,6 +23,7 @@ import { CardSliderComponent } from './card-slider/card-slider.component';
 import { CardWithDetaliesComponent } from './card-with-detalies/card-with-detalies.component';
 import { DialogDetailsComponent } from './dialog-details/dialog-details.component';
 import { DetailsComponent } from './details/details.component';
+import { WatchlistComponent } from './watchlist/watchlist.component';
 
 @NgModule({
   declarations: [
@@ -39,6 +40,7 @@ import { DetailsComponent } from './details/details.component';
     CardWithDetaliesComponent,
     DialogDetailsComponent,
     DetailsComponent,
+    WatchlistComponent,
   ],
   imports: [
   BrowserModule,

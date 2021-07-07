@@ -37,13 +37,21 @@ export class CardWithDetaliesComponent implements OnInit {
     this.dialog.open(DialogDetailsComponent);
   }
 
-  carntApiData(data?: any): void {
+  carntApiData(data?: any) {
     this._SharingDataCardService.updateData(data);
     this.openDialog();
   }
-  carntApiDataDetails(data?: any): void {
+  
+  carntApiDataDetails(data?: any) {// send data to detailes
     this._SharingDataCardService.updateData(data);
   }
-
-  ngOnInit(): void {}
+  
+  addToWatchlist(data?: any) {// send data to Watchlist
+    this._SharingDataCardService.updateWatchlist(data);
+  }
+  ngOnInit(): void {
+    
+    
+   
+  }
 }

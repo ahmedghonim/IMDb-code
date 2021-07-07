@@ -1,3 +1,4 @@
+import { WatchlistComponent } from './watchlist/watchlist.component';
 import { DetailsComponent } from './details/details.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
@@ -15,6 +16,7 @@ const routes: Routes = [
   {path:"movies",component:MoviesComponent},
   {path:"tv",canActivate:[AuthGuard],component:TvComponent},
   {path:"details",canActivate:[AuthGuard],component:DetailsComponent},
+  {path:"watchlist",canActivate:[AuthGuard],component:WatchlistComponent},
   {path:"login",component:LoginComponent},
   {path:"register",component:RegisterComponent},
   {path:"",redirectTo:"/home",pathMatch:"full"},

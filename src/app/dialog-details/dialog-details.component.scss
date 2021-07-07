@@ -1,11 +1,11 @@
+
 .mat-dialog-container {
     position: relative;
     overflow: visible !important;
-  width: 50% !important;
+ 
   margin: auto !important;
   padding: 20px 10px!important;
   max-height:auto !important ;
-  overflow: visible;
 
   .layer{
       position: absolute;
@@ -14,7 +14,7 @@
      bottom: -100%;
      left: -100%;
      right: -100%;
-    z-index: -999;
+      z-index: -999;
   }
   .closeBtnDialog{
       position: absolute;
@@ -35,5 +35,17 @@
       }
     }
   }
+  
 }
 
+// @include media-breakpoint-down(sm) { 
+//   .mat-dialog-container{
+//       width: 100% !important;
+//           }
+// }
+// @include media-breakpoint-down(md) {
+//     .mat-dialog-container{
+//         width: 80% !important;
+//             }
+    
+//   }

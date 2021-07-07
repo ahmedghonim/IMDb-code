@@ -8,7 +8,7 @@
       <div class="col-12 my-3">
         <h2>Featured today</h2>
       </div>
-      <div class="col-7">
+      <div class="col-lg-7 col-md-9 col-12">
         <app-card-with-detalies [slidesPerView]="3" [api]="topMovies">
         </app-card-with-detalies>
       </div>
@@ -97,11 +97,11 @@
       <div class="col-12 mt-5">
         <h2>More to watch</h2>
       </div>
-      <div class="col-6">
+      <div class="col-12 col-md-6">
         <!-- title Div uper part  -->
         <div class="row my-3">
           <!-- - Title In The Top -- -->
-          <div class="w-auto titleDiv">
+          <div class="w-auto  titleDiv">
             <div class="d-flex align-items-center my-3">
               <div class="title py-2 d-flex align-items-center">
                 <span class="ms-2 fs-3 fw-bold"> Top picks </span>
@@ -179,7 +179,7 @@
         </div>
         <!-- title Div uper part  -->
         <div class="row">
-          <div class="col-6" *ngFor="let topMovies of topMovies; let i = index">
+          <div class="col-md-6" *ngFor="let topMovies of topMovies; let i = index">
             <div *ngIf="i < 6">
               <div class="d-flex align-items-start mt-3 gradiant pt-3">
                 <div class="d-flex align-items-center">

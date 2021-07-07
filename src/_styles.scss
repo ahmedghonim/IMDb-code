@@ -37,10 +37,6 @@ $app-light-theme: mat-light-theme($mat-primary-palette, $mat-accent-palette);
 $app-dark-theme: mat-dark-theme($mat-primary-palette, $mat-accent-palette);
 @include angular-material-theme($app-dark-theme);
 
-body {
-  margin: 0;
-  font-family: Roboto, "Helvetica Neue", sans-serif;
-}
 :root {
   --yellow: #e2b616;
   --lightBlack: #121212;
@@ -153,3 +149,7 @@ h2 {
 }
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+h2{
+  line-height: 2.4rem !important;
+}

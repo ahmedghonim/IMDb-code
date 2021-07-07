@@ -7,15 +7,27 @@
   class="hederSwiper2"
   class="mySwiper-card-with-detales"
   [breakpoints]="{
-    '640': {
+    '200': {
+      slidesPerGroup:1,
       slidesPerView: 1 ,
-      spaceBetween: 20
+      spaceBetween: 15
+    },
+    '640': {
+      slidesPerGroup:2,
+      slidesPerView: 2 ,
+      spaceBetween: 15
     },
     '768': {
-      slidesPerView: 3 ,
-      spaceBetween: 40
+      slidesPerGroup:slidesPerView-1,
+      slidesPerView: slidesPerView-1 ,
+      spaceBetween: 15
+    },
+    '992': {
+      slidesPerView: slidesPerView ,
+      spaceBetween: 15
     },
     '1024': {
+      slidesPerGroup:slidesPerView,
       slidesPerView: slidesPerView,
       spaceBetween: 15
       
@@ -24,7 +36,7 @@
 >
   <ng-template swiperSlide *ngFor="let api of api; let i = index">
     <div class="custom-shadow rounded bg-light-black">
-      <button mat-icon-button class="customLBtn">
+      <button mat-icon-button (click)="addToWatchlist(api)" class="customLBtn">
         <mat-icon class="fs-1">bookmark_add</mat-icon>
       </button>
       <a routerLink='/details' (click)="carntApiDataDetails(api)" class="row">

@@ -1,4 +1,4 @@
-<mat-sidenav-container class="sidenav-container">
+<mat-sidenav-container  class="sidenav-container">
   <mat-sidenav
     #drawer
     class="sidenav"
@@ -6,8 +6,9 @@
     [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
     [mode]="(isHandset$ | async) ? 'side' : 'over'"
     [opened]="(isHandset$ | async) === true"
+    
   >
-    <mat-toolbar>Menu</mat-toolbar>
+    <mat-toolbar  >Menu</mat-toolbar>
     <mat-nav-list *ngIf="isLogin" class="mt-5 d-flex flex-column justify-content-center">
       <button
         mat-button
@@ -66,7 +67,7 @@
           menu
         </button>
         <div class="ms-auto">
-          <button mat-raised-button class="me-3">
+          <button mat-raised-button routerLink="/watchlist" class="me-3">
             <mat-icon class="">bookmark_add</mat-icon> Watchlist
           </button>
           <button mat-raised-button [matMenuTriggerFor]="menu">

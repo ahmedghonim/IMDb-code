@@ -1,0 +1,42 @@
+
+@media (min-width: 200px) {
+  .mat-dialog-container {
+    width: 80% !important;
+  }
+ 
+}
+// Small devices (landscape phones, 576px and up)
+@media (min-width: 576px) {
+  .mat-dialog-container {
+    width: 80% !important;
+  }
+ 
+}
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) {
+  .mat-dialog-container {
+    width: 80% !important;
+    
+  }
+ 
+
+}
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) {
+  .mat-dialog-container {
+    width: 55% !important;
+    
+  }
+ 
+}
+
+// X-Large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) {
+  .mat-dialog-container {
+    width: 55% !important;
+  }
+  
+}
+
