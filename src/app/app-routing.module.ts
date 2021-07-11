@@ -9,7 +9,6 @@ import { NotfoundComponent } from './notfound/notfound.component';
 import { RegisterComponent } from './register/register.component';
 import { TvComponent } from './tv/tv.component';
 import { AuthGuard } from './auth.guard';
-import { DialogDetailsComponent } from './dialog-details/dialog-details.component';
 
 const routes: Routes = [
   {path:"home",canActivate:[AuthGuard],component:HomeComponent},
